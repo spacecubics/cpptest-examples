@@ -1,0 +1,21 @@
+#+title: Simple examples for Parasoft C++Test
+
+This is a simple example to test Parasoft's C++Test.
+
+Make sure you add C++test install directory in your `PATH` environment
+variable.
+
+#+begin_example
+mkdir myworkspace
+cd myworkspace
+git clone https://github.com/spacecubics/cpptest-examples
+cd cpptest-examples
+rm -rf builddir
+cmake -S . -B builddir -GNinja
+cpptesttrace --cpptestscanOutputFile=cpptestscan.bdf cmake --build builddir
+cd -
+rm -rf out
+cpptestcli -data out -localsettings cpptest-examples/local.conf -bdf cpptest-examples/builddir/cpptestscan.bdf
+cpptestcli -data out -localsettings cpptest-examples/local.conf -config "builtin://Recommended Rules" -report out/report
+xdg-open ws/report/report.html
+#+end_example
