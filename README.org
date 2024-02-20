@@ -1,6 +1,6 @@
 #+title: Simple examples for Parasoft C++Test
 
-This is a simple example to test Parasoft's C++Test.
+This is a simple example to test Parasoft C/C++test.
 
 Make sure you add C++test install directory in your `PATH` environment
 variable.
